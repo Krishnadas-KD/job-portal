@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title"></div>
+        <div class="content">
+
+
+            <form action="/register" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" name="fname" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" name="phoneno" placeholder="Enter your Phoneno" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Select</span>
+                        <select name="vmode" class="form-select form-select-lg mb-3" style="width: 250px; height: 45px;" aria-label=".form-select-lg example">
+                            <option value="js" selected>job seeker</option>
+                            <option value="jp">job provider</option>
+                          </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Confirm Password</span>
+                        <input type="password" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Register">
+                    <a href="/">Login</a>
+
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

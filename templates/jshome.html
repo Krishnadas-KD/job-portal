@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="../static/styles.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../static/style3.css">
+    <script src="../static/intex.js"></script>
+</head>
+
+<body>
+    <script>
+        setTimeout(() => {
+            document.getElementById('alertbox').style.visibility = "hidden";
+        }, 2000);
+    </script>
+
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(255, 255, 255);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: rgb(0, 0, 0); font-size: 25px;">
+                <img src="../static/image.jpeg" alt="" width="40" height="40" class="d-inline-block align-text-top"> SMARTCAREER
+            </a>
+            <button class="navbar-toggler" type="button" style="border-color:rgb(0, 0, 0) ; color: rgb(0, 0, 0);" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fas fa-bars"></i></span>
+      </button>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" style="color: rgb(0, 0, 0);">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jshome" style="color: rgb(0, 0, 0);">Add Job</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profileview" style="color: rgb(0, 0, 0);">profile view</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/updatepage" style="color: rgb(0, 0, 0);">Update</a>
+                    </li>
+                    <li class=" nav-item ">
+                        <a class="nav-link" href="/logout" style="color: rgb(0, 0, 0); ">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 mb-3">
+                <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for names..">
+            </div>
+        </div>
+        {% if msg!='NULL' %}
+        <div id="alertbox" style="position: relative;" class="alert alert-danger" role="alert">
+            {{msg}}
+        </div>
+        {% endif %}
+        <div class="row" id="myItems">
+            <div class="col-sm-12 mb-3">
+                {% for jop in joplist %}
+                <div class="card" style="flex-direction: row;">
+
+                    <img src="{{jop[8]}}" style="padding: 10px; width: 120px; height:120px;border-radius: 60px;" class="card-img-top" alt="..">
+
+                    <div class="card-body">
+                        <div class="text-right mb-3">
+
+                        </div>
+                        <h5 class="card-title"><a href=""><a href="/cjoblist/{{jop[5]}}">{{jop[0]}}</a></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Started in {{jop[1]}} .The capital is {{jop[6]}}</h6>
+                        <p><a href="/view/{{jop[5]}}">more..</a></p>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

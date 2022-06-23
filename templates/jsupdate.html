@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <title>register here</title>
+    <style>
+        body {
+            font-family: "comic sans ms", sans serif;
+            background-color: skyblue;
+            margin: 0;
+        }
+        
+        h2 {
+            background-color: white;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        td {
+            padding: 7px;
+        }
+        
+        input {
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        input:focus {
+            outline: none;
+            border: 1px solid blue;
+        }
+        
+        input:hover {
+            box-shadow: 5px 5px 5px black;
+        }
+        
+        .button {
+            background-color: pink;
+            color: #fff;
+            border: none;
+            padding: 7px
+        }
+        
+        .button:hover {
+            cursor: pointer;
+            box-shadow: 5px 5px 5px red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Update</h1>
+
+    <form action="/updatedetailsjs" method="post" enctype="multipart/form-data">
+        <div id="personal-details">
+            <h2 align="center">Personal Deatils</h2>
+            <table width="100%">
+                <tr>
+                    <td>Full name</td>
+                    <td>
+                        <input type="text" name="fullname" value="{{result[1]}}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="number" name="age" value="{{result[3]}}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>
+                        <input type="date" name="dob" value="{{result[4]}}" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">Select Gender</td>
+                    <td>
+                        {% if result[6]=='male' %}
+                        <input type="radio" name="gender" value="male" checked>Male {% else%}
+                        <input type="radio" name="gender" value="male">Male {% endif %}
+                    </td>
+                    <td>
+                        {% if result[6]=='Female' %}
+                        <input type="radio" name="gender" value="Female" checked>Female {% else%}
+                        <input type="radio" name="gender" value="Female">Female {% endif %}
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contact Details</td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td>
+                        <input type="text" name="phoneno" value="{{result[8]}}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Id</td>
+                    <td>
+                        <input type="email" value="{{result[0]}}" name="emailv" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">qualification</td>
+                    <td>
+                        <input type="text" name="qualification" value="{{result[5]}}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">city</td>
+                    <td>
+                        <input type="text" name="city" value="{{result[7]}}" required>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">photo</td>
+                    <td>
+                        <input type="file" name="photo" value="{{result[9]}}" accept=".jpg,.png,.jpge">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">cv</td>
+                    <td>
+                        <input type="file" name="cv" value="{{result[10]}}" accept="pdf">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Bio</td>
+
+                </tr>
+                <tr>
+                    <td colspan="8"> <textarea name="bio" rows="10" cols="70" required>{{result[3]}}</textarea></td>
+
+                </tr>
+
+                <tr>
+                    <td><input type="submit"></td>
+
+
+                </tr>
+            </table>
+        </div>
+
+
+        </div>
+    </form>
+
+    <!-- Main Footer -->
+
+
+
+</body>
+
+</html>

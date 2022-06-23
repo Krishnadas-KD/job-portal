@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <title>register here</title>
+    <style>
+        body {
+            font-family: "comic sans ms", sans serif;
+            background-color: skyblue;
+            margin: 0;
+        }
+        
+        h2 {
+            background-color: white;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        td {
+            padding: 7px;
+        }
+        
+        input {
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        input:focus {
+            outline: none;
+            border: 1px solid blue;
+        }
+        
+        input:hover {
+            box-shadow: 5px 5px 5px black;
+        }
+        
+        .button {
+            background-color: pink;
+            color: #fff;
+            border: none;
+            padding: 7px
+        }
+        
+        .button:hover {
+            cursor: pointer;
+            box-shadow: 5px 5px 5px red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Add extra data before enter</h1>
+
+    <form action="/adddetailsjp" method="post" enctype="multipart/form-data">
+        <div id="personal-details">
+            <h2 align="center">Personal Deatils</h2>
+            <table width="100%">
+                <tr>
+                    <td>Compony name</td>
+                    <td>
+                        <input type="text" name="fullname" value="{{result[0]}}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Created Year</td>
+                    <td>
+                        <input type="number" name="cyear">
+                    </td>
+                </tr>
+                <tr>
+                    <td>ceo</td>
+                    <td>
+                        <input type="text" name="ceo">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">Founder</td>
+                    <td>
+                        <input type="text" name="founder">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td>
+                        <input type="text" name="phoneno" value="{{result[2]}}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Id</td>
+                    <td>
+                        <input type="email" value="{{result[1]}}" name="emailv">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">Capital</td>
+                    <td>
+                        <input type="text" name="capital">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">city</td>
+                    <td>
+                        <input type="text" name="city">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">photo</td>
+                    <td>
+                        <input type="file" name="photo" accept=".jpg,.png,.jpge">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Discription</td>
+
+                </tr>
+                <tr>
+                    <td colspan="8"> <textarea name="disc" rows="10" cols="70"></textarea></td>
+
+                </tr>
+
+                <tr>
+                    <td><input type="submit"></td>
+
+
+                </tr>
+            </table>
+        </div>
+
+
+        </div>
+    </form>
+
+    <!-- Main Footer -->
+
+
+
+</body>
+
+</html>
