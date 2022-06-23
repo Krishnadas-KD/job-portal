@@ -5,7 +5,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER ='jobportal0098@gmail.com'
-EMAIL_HOST_PASSWORD = 'rywrslckgyguimrr'
+EMAIL_HOST_PASSWORD = '***************'
 
 def mailsender(Email):
     smtpserver=smtplib.SMTP("smtp.gmail.com",587)
